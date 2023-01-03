@@ -1,0 +1,99 @@
+.fundo-banner5 {
+    display: grid;
+    background-image: url(src/imagens/imagem_banner5.jpg);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    align-content: center;
+}
+.titulo-lighter {
+    font-weight: lighter;
+    font-size: 35px;
+}
+.titulo-bolder {
+    font-weight: bolder;
+    color: #00d200;
+    font-size: 35px;
+}
+.paragrafo-banner5 {
+    font-size: 25px;
+}
+.botao-detalhes-controle {
+    display: grid;
+    width: 200px;
+    height: 50px;
+    margin-top: 25px;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    background-image: linear-gradient(#1b1b1b, #000000);
+}
+.texto-detalhes {
+    color: #00d200;
+    text-decoration: none;
+}
+.texto-detalhes:hover {
+    color: white;
+}
+
+/*ÁREA PARA O DESIGN RESPONSIVO DO BANNER 5*/
+
+@media screen and (min-width: 769px) and (max-width: 900px) { /*PC, TV E ETC*/
+    .coluna-banner5 {
+        padding: 60px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) { /*TABLET*/
+    .coluna-banner5 {
+        padding: 30px;
+    }
+    .titulo-lighter {
+        font-weight: lighter;
+        font-size: 20px;
+    }
+    .titulo-bolder {
+        font-weight: bolder;
+        color: #00d200;
+        font-size: 20px;
+    }
+    .paragrafo-banner5 {
+        font-size: 12px;
+    }
+    .botao-detalhes-controle {
+        width: 110px;
+        height: 40px;
+        margin-top: 15px;
+    }
+    .texto-detalhes {
+        font-size: 10px;
+        font-weight: 500;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) { /*MOBILE*/
+    .coluna-banner5 {
+        padding: 15px;
+    }
+    .titulo-lighter {
+        font-weight: lighter;
+        font-size: 15px;
+    }
+    .titulo-bolder {
+        font-weight: bolder;
+        color: #00d200;
+        font-size: 15px;
+    }
+    .paragrafo-banner5 {
+        font-size: 10px;
+    }
+    .botao-detalhes-controle {
+        width: 90px;
+        height: 25px;
+        margin-top: 15px;
+    }
+    .texto-detalhes {
+        font-size: 8px;
+        font-weight: 700;
+    }
+}

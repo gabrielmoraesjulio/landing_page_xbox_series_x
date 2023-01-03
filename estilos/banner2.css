@@ -1,0 +1,80 @@
+.fundo-banner2 {
+    padding: 100px;
+    background-image: url(src/imagens/imagem_banner2.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 700px;
+}
+.titulo-banner2 {
+    text-align: start;
+    background-image: linear-gradient(#1d1d1d, #000000);
+    padding: 10px;
+    margin: 10px;
+}
+
+.titulo-banner2_teste {
+    text-align: start;
+    background-image: linear-gradient(#611d1d, #611d1d);
+    padding: 10px;
+    margin: 10px;
+}
+.subtitulo-banner2 {
+    text-align: start;
+    background-color: black;
+    width: 100px;
+    padding: 5px;
+    margin: 10px;
+}
+
+/*ÁREA PARA O DESIGN RESPONSIVO DO BANNER2*/
+
+@media screen and (min-width: 769px) and (max-width: 900px) { /*PC, TV E ETC*/
+    .subtitulo-banner2 {
+        margin-left: 0;
+    }
+    .titulo-banner2 {
+        margin-left: 0;
+    }
+    .xbox-banner2 {
+        height: 320px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) { /*TABLET*/
+    .subtitulo-banner2 {
+        margin-left: 0;
+    }
+    .titulo-banner2 {
+        margin-left: 0;
+    }
+    .xbox-banner2 {
+        height: 320px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) { /*MOBILE*/
+    .subtitulo-banner2 {
+        margin-left: 0;
+    }
+    .titulo-banner2 {
+        margin-left: 0;
+    }
+    .xbox-banner2 {
+        height: 320px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .titulo-banner2 {
+        width: 200px;
+    }
+    .xbox-banner2 {
+        height: 250px;
+        padding-bottom: 15px;
+    }
+    .alinhamento-coluna-banner2 {
+        display: grid;
+        justify-content: center;
+    }
+}

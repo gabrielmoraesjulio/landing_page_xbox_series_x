@@ -1,0 +1,2 @@
+- SQL Delete do usuario que vem pela URL
+- Direcionar para listar

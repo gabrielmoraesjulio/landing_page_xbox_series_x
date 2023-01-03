@@ -1,0 +1,2 @@
+- SQL Select com todos os usuarios 
+- Botao de editar em cada linha de editar e excluir (DENTRO DO WHILE)

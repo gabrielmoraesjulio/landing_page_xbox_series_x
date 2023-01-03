@@ -1,0 +1,54 @@
+.fundo-banner4 {
+    display: grid;
+    background-image: url(src/imagens/imagem-banner4.jpg);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    text-align: right;
+    align-content: center;
+}
+.titulo-banner4 {
+    font-weight: bolder;
+    color: #00d200;
+    font-size: 40px;
+}
+.paragrafo-banner4 {
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+
+/*ÁREA PARA O DESIGN RESPONSIVO DO BANNER 4*/
+
+@media screen and (min-width: 769px) and (max-width: 900px) { /*PC, TV E ETC*/
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) { /*TABLET*/
+    .titulo-banner4 {
+        font-weight: bolder;
+        color: #00d200;
+        font-size: 30px;
+    }
+    .paragrafo-banner4 {
+        font-weight: 500;
+        color: white;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) { /*MOBILE*/
+    .titulo-banner4 {
+        font-weight:bold;
+        color: #00d200;
+        font-size: 20px;
+    }
+    .paragrafo-banner4 {
+        font-weight: 500;
+        color: white;
+        font-size: 10px;
+    }
+}

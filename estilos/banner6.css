@@ -1,0 +1,116 @@
+.fundo-banner6 {
+    display: grid;
+    background-image: url(src/imagens/imagem_banner6.jpg);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+.titulo-banner6 {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 40px;
+}
+.titulo-banner6-bold {
+    font-weight: bolder;
+}
+.titulo-banner6-light {
+    font-weight: lighter;
+}
+.subtitulo-banner6 {
+    font-weight: 600;
+    font-size: 20px;
+}
+.texto-verde {
+    color: #00d200;
+}
+.game-banner6 {
+    width: 210px;
+    height: 353px;
+}
+.zoom {
+    display: grid;
+    width: 210px;
+    height: 353px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.zoom img{
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+ }
+
+.zoom:hover img{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/*ÁREA PARA O DESIGN RESPONSIVO DO BANNER 5*/
+
+@media screen and (min-width: 769px) and (max-width: 900px) { /*PC, TV E ETC*/
+    .fundo-banner6 {
+        text-align: start;
+    }
+    .game-banner6 {
+        width: 160px;
+        height: 303px;
+    }
+    .zoom {
+        width: 160px;
+        height: 303px;
+    }
+    .titulo-banner6 {
+        font-size: 30px;
+    }
+    .subtitulo-banner6 {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) { /*TABLET*/
+    .fundo-banner6 {
+        text-align: start;
+        padding: 20px;
+    }
+    .game-banner6 {
+        width: 110px;
+        height: 213px;
+    }
+    .zoom {
+        width: 110px;
+        height: 213px;
+    }
+    .titulo-banner6 {
+        font-size: 25px;
+    }
+    .subtitulo-banner6 {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) { /*MOBILE*/
+    .fundo-banner6 {
+        text-align: start;
+        padding: 20px;
+    }
+    .game-banner6 {
+        width: 70px;
+        height: 150px;
+    }
+    .zoom {
+        width: 70px;
+        height: 150px;
+    }
+    .titulo-banner6 {
+        font-size: 15px;
+    }
+    .subtitulo-banner6 {
+        font-size: 12px;
+    }
+}
