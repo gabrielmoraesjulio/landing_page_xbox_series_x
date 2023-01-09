@@ -1,6 +1,6 @@
 <?php session_start();
 
-include ("bd.php");
+include ("../vars/bd.php");
 
 ######################### VARIÁVEIS #########################
 //VALORES RECEBIDOS PELO FORMULARIO DE LOGIN
@@ -13,13 +13,13 @@ $total_tb_login_admin = mysqli_num_rows($res_tb_login_admin);
 
 switch ($total_tb_login_admin) {
     case 0:
-        header("Location: login.php");
+        header("Location: ../login/login.php");
         $_SESSION["erro"] = "Login ou senha invalido!";
         break;
     case 1:
         $_SESSION["usuario"] = $usuario;
         $_SESSION["senha"] = $senha;
-        header("Location: admin.php");
+        header("Location: ../admin/admin.php");
         break;
 }
 ?>

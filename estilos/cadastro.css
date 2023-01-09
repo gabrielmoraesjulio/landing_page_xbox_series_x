@@ -1,0 +1,12 @@
+.alinhamento {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.formulario-cadastro-admin {
+    width: 500px;
+    height: 250px;
+    padding: 40px;
+}

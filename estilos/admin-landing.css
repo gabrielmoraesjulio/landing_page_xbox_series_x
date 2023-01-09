@@ -1,0 +1,50 @@
+html, body {
+    font-family: 'Roboto';
+}
+
+/*NAVBAR*/
+.logo-navbar {
+    margin-left: 10px;
+}
+.item-ativo-navbar {
+    color: rgb(69, 69, 69);
+    font-weight: 500;
+}
+
+/*ELEMENTO EDITAR BANNER 1*/
+.alinhamento {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+.box-editar-banner1 {
+    background-color: #f8f9fa;
+    width: 500px;
+    height: 250px;
+    margin: 40px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+.espacamento-dentro {
+    margin: 20px;
+}
+
+/*ELEMENTO EDITAR BANNER 2*/
+.alinhamento {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+.box-editar-banner2 {
+    background-color: #f8f9fa;
+    width: 500px;
+    height: 250px;
+    margin: 40px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+.espacamento-dentro {
+    margin: 20px;
+}

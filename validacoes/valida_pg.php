@@ -1,5 +1,4 @@
 <?php
-
 $usuario = $_SESSION["usuario"];
 $senha = $_SESSION["senha"];
 
@@ -9,10 +8,11 @@ $total_tb_login_admin = mysqli_num_rows($res_tb_login_admin);
 
 switch ($total_tb_login_admin) {
     case 0:
-        header("Location: login.php");
+        header("Location: ../login/login.php");
         $_SESSION["erro_de_pagina"] = "Você não tem acesso";
         break;
     case 1:
 
         break;
 }
+?>
