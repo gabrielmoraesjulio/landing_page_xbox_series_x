@@ -1,32 +1,51 @@
 <?php session_start();
 
     include ("../vars/bd.php");
-    include ("../validacoes/valida_pg.php");
-    include ("../vars/vars_admin.php");
 
-    $novo_user = $_POST["novo_usuario"];
-    $senha = $_POST["senha"];
-    $confirma_senha = $_POST["confirma_senha"];
+    //VARIÁVEIS RECEBIDAS E TRATADAS VIA METODO POST
+    $novo_user = mysqli_real_escape_string($id, trim( $_POST["novo_usuario"] ) );
+    $senha = mysqli_real_escape_string($id, trim( md5( $_POST["senha"] ) ) );
+    $confirma_senha = mysqli_real_escape_string($id, trim( md5( $_POST["confirma_senha"] ) ) );
 
-    $sql_tb_login_admin_listar = " SELECT *  FROM tb_login_admin ";
-    $res_tb_login_admin_listar = mysqlexec($id,$sql_tb_login_admin_listar);
+    //COMANDO SQL PARA VERIFICAR OS USUARIOS REGISTRADOS NO BANCO DE DADOS
+    $sql_tb_login_admin_listar = " SELECT COUNT(*) AS TOTAL FROM tb_login_admin WHERE usuario='$novo_user' ";
+    $res_tb_login_admin_listar = mysqlexec($id, $sql_tb_login_admin_listar);
+    $row_tb_login_admin_listar = mysqli_fetch_assoc($res_tb_login_admin_listar);
 
-    while($row_tb_login_admin_listar = mysqli_fetch_array($res_tb_login_admin_listar,MYSQLI_ASSOC)) {
+    //CONDIÇÕES DE LOGIN *USUARIO*
+    if ($row_tb_login_admin_listar["TOTAL"] == 1) {
+        $_SESSION["usuario_existente"] = "Este nome de usuário já existe!";
+        header("Location: ../admin/cadastro.php");
+        die();
+    } else {
+        $_SESSION["usuario_existente"] = "";
+        header("Location: ../admin/cadastro.php");
+    }
 
-        $listar_usuario = $row_tb_login_admin_listar["usuario"];
+    //CONDIÇÕES DE LOGIN *SENHA*
+    if ($senha != $confirma_senha) {
+        $_SESSION["confirma_senha"] = "As senhas precisam ser iguais, tente novamente.";
+        header("Location: ../admin/cadastro.php");
+        die();
+    } else {
+        $_SESSION["confirma_senha"] = "";
+        header("Location: ../admin/cadastro.php");
+    }
 
-    };
+    //MENSAGEM CADASTRO EFETUADO
+    if ($senha == $confirma_senha or $row_tb_login_admin_listar["TOTAL"] == 0) {
     
+        $_SESSION["cadastro_concluido"] = "Cadastrado concluído!";
 
-    if ($novo_user == $listar_usuario) {
+    } else {
 
-        $_SESSION["erro_cadastro"] = "Este usuário já existe!";
-        header("Location: ../admin/cadastro.php");
+        $_SESSION["cadastro_concluido"] = "";
+    }
 
-    } elseif ($novo_user != $listar_usuario) {
+    $sql_cadastrar_usuario = "INSERT INTO `tb_login_admin`(`cod_usuarios`, `usuario`, `senha`) VALUES (NULL,'$novo_user','$confirma_senha')";
 
-        $_SESSION["erro_cadastro"] = "Deu certo";
-        header("Location: ../admin/cadastro.php");
+    mysqlexec($id, $sql_cadastrar_usuario);
 
-    };
+    header("Location: ../admin/cadastro.php");
+
 ?>

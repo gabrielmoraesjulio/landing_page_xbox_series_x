@@ -4,8 +4,8 @@ include ("../vars/bd.php");
 
 ######################### VARIÁVEIS #########################
 //VALORES RECEBIDOS PELO FORMULARIO DE LOGIN
-$usuario = $_POST["usuario"];
-$senha = $_POST["senha"];
+$usuario = mysqli_real_escape_string($id, trim( $_POST["usuario"] ) );
+$senha = mysqli_real_escape_string($id, trim( md5( $_POST["senha"] ) ) );
 
 $sql_tb_login_admin = " SELECT * FROM tb_login_admin where usuario='$usuario' and senha='$senha' ";
 $res_tb_login_admin = mysqlexec($id,$sql_tb_login_admin);

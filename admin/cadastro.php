@@ -81,7 +81,15 @@
 
             <button type="submit" class="btn btn-dark mt-lg-3 mb-lg-2">CADASTRAR</button><br>
 
-            <span style="color:red;"><?php echo $_SESSION["erro_cadastro"] ?? "";?></span>
+            <span style="color:red;"><?php 
+            echo $_SESSION["usuario_existente"] ?? ""; 
+            echo "<br>";
+            echo $_SESSION["confirma_senha"] ?? ""; 
+            ?></span>
+
+            <span style="color:green;"><?php 
+            echo $_SESSION["cadastro_concluido"] ?? "";
+            ?></span>
         </form>
     </div>
 </div>
