@@ -54,7 +54,7 @@
                     <a class="nav-link" href="#">Gamepass</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="../cadastro.php"><span class="item-ativo-navbar">Cadastro</span></a>
+                    <a class="nav-link" href="../admin/cadastro.php"><span class="item-ativo-navbar">Cadastro</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../login/logout.php">Sair</a>
@@ -68,6 +68,8 @@
 
 <div class="alinhamento">
     <div class="formulario-cadastro-admin">
+
+        <h1 class="mb-lg-4">Cadastrar Novo Usuário</h1>
         <form action="../validacoes/valida_cadastro.php" method="post">
 
             <label for="novo_usuario">Novo Usuario</label><br>
@@ -82,13 +84,16 @@
             <button type="submit" class="btn btn-dark mt-lg-3 mb-lg-2">CADASTRAR</button><br>
 
             <span style="color:red;"><?php 
-            echo $_SESSION["usuario_existente"] ?? ""; 
-            echo "<br>";
-            echo $_SESSION["confirma_senha"] ?? ""; 
+                echo $_SESSION["usuario_existente"] ?? ""; 
+                echo "<br>";
+                echo $_SESSION["confirma_senha"] ?? "";
+                echo "<br>";
+                echo $_SESSION["confirma_caracteres"] ?? "";
             ?></span>
 
-            <span style="color:green;"><?php 
-            echo $_SESSION["cadastro_concluido"] ?? "";
+            <span style="color:green;"><?php
+                echo $_SESSION["cadastro_concluido"] ?? "";
+                $_SESSION["cadastro_concluido"] = "";
             ?></span>
         </form>
     </div>
