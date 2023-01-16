@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -13,6 +13,28 @@ $email = $_POST["email"];
 $assunto = $_POST["assunto"];
 $corpo_email = $_POST["corpo_email"];
 $anexo = $_FILES["anexo"];
+
+if(empty($seu_nome)){
+    $_SESSION["erro_enviar_email"] = "Não deixe nenhum campo vázio!";
+    header("Location: ../admin/email.php");
+    die();
+} elseif (empty($nome)) {
+    $_SESSION["erro_enviar_email"] = "Não deixe nenhum campo vázio!";
+    header("Location: ../admin/email.php");
+    die();
+} elseif (empty($email)) {
+    $_SESSION["erro_enviar_email"] = "Não deixe nenhum campo vázio!";
+    header("Location: ../admin/email.php");
+    die();
+} elseif (empty($assunto)) {
+    $_SESSION["erro_enviar_email"] = "Não deixe nenhum campo vázio!";
+    header("Location: ../admin/email.php");
+    die();
+} elseif (empty($corpo_email)) {
+    $_SESSION["erro_enviar_email"] = "Não deixe nenhum campo vázio!";
+    header("Location: ../admin/email.php");
+    die();
+}
 
 //CONEXÃO PHP MAILER
 $mailer = new PHPMailer();
@@ -29,7 +51,7 @@ $mailer -> Password = '';
 $mailer -> SMTPOptions = array( 'ssl' => array('verify_peer' => false, 'verify_peer_name' => false, 'allow_self_signed' => true ) );
 
 //REMETENTE
-$mailer -> From = "therealgolk@gmail.com";
+$mailer -> From = "";
 
 //NOME
 $mailer -> FromName = $seu_nome;
@@ -52,14 +74,13 @@ $mailer -> Subject = $assunto;
 //Corpo do email
 $mailer -> Body = $corpo_email;
 
-// //Envia o E-mail
-// $enviando = $mailer -> Send();
-
 if( !$mailer -> Send() ) {
-    echo "E-mail não enviado!";
+    $_SESSION["erro_enviar_email"] = "Não foi possível enviar seu e-mail, tente novamente.";
+    header("Location: ../admin/email.php");
     die();
 }
 
 $mailer -> smtpClose();
+$_SESSION["enviar_email"] = "E-mail enviado com sucesso!";
 header("Location: ../admin/email.php");
 ?>

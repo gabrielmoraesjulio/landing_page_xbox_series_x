@@ -2,7 +2,7 @@
 
 session_start();
 
-include ("bd.php");
+include ("../vars/bd.php");
 
 //ALTERAR BANNER 1
     $sql_tb_textos_banner1 = " UPDATE tb_textos_banner1 SET 
@@ -13,5 +13,5 @@ include ("bd.php");
 mysqlexec($id,$sql_tb_textos_banner1);
 
 //Voltar para a Admin
-header("Location: admin.php");
+header("Location: ../admin/admin.php");
 ?>

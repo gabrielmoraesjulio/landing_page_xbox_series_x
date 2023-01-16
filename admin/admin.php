@@ -1,4 +1,4 @@
-<?php session_start();
+<?php session_start(); 
     include ("../vars/bd.php");
     include ("../validacoes/valida_pg.php");
     include ("../vars/vars_admin.php");
@@ -31,7 +31,7 @@
 <body>
 
 <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light alinhar-usuario">
 
         <a class="navbar-brand" href="../admin/admin.php">
             <img src="../estilos/src/imagens/logo-xbox-admin.png" alt="logo-xbox" class="logo-navbar">
@@ -47,13 +47,13 @@
                     <a class="nav-link" href="admin.php"><span class="item-ativo-navbar">Xbox Series X</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Xbox Series S</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Gamepass</a>
+                    <a class="nav-link" href="../admin/email.php">E-mail</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../admin/cadastro.php">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../admin/usuarios.php">Usuarios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../login/logout.php">Sair</a>
@@ -62,7 +62,6 @@
         </div>
 
     </nav>
-
 </div>
 
 <!--BANNER 1-->
@@ -72,7 +71,7 @@
             <h1>BANNER 1</h1>
         </div>
 
-        <form action="alterar_banner1.php" method="post">
+        <form action="../alterar/alterar_banner1.php" method="post">
 
             <div class="espacamento-dentro">
                 <input type="text" name="titulo_banner1" value="<?php echo $row_tb_textos_banner1["titulo_banner1"]; ?>"> - 
@@ -93,7 +92,7 @@
             <h1>BANNER 2</h1>
         </div>
 
-        <form action="alterar_banner2.php" method="post">
+        <form action="../alterar/alterar_banner2.php" method="post">
 
             <div class="espacamento-dentro">
                 <input type="text" name="titulo_banner2" value="<?php echo $row_tb_textos_banner2["titulo_banner2"]; ?>"> - 

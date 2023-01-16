@@ -1,4 +1,4 @@
-<?php 
+<?php
 $dbname = "landing-page-xbox";
 $usuario = "root";
 $senha = "";

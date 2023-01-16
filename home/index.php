@@ -204,13 +204,13 @@
     <!--COMEÇO DO BANNER 7-->
     <div class="fundo-banner7">
         <div class="conteudo-banner7">
-            <h1 class="titulo-banner7"> <?php echo $row_tb_textos_banner7["titulo_banner7"]; ?> </h1>
-            <h2 class="subtitulo-banner7"> <?php echo $row_tb_textos_banner7["subtitulo_banner7"]; ?> </h2>
+            <h1 class="titulo-banner7"> <?php echo $row_tb_textos_banner7["titulo_banner7"]; ?> </h1><br>
+            <h2 class="subtitulo-banner7"> <?php echo $row_tb_textos_banner7["subtitulo_banner7"]; ?> </h2><br>
             
-            <form action="magica/formulario-banner7.php" method="post">
+            <form action="preVenda.php" method="post">
                 <label for="email-pre-venda">E-MAIL</label>
-                <input type="email" id="email-pre-venda">
-                <button type="submit">ENVIAR</button>
+                <input type="email" name="email_pre_venda">
+                <button type="submit" class="btn btn-light">ENVIAR</button>
             </form>
         </div>
     </div>

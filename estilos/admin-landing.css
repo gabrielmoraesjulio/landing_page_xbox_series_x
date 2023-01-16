@@ -7,8 +7,12 @@ html, body {
     margin-left: 10px;
 }
 .item-ativo-navbar {
-    color: rgb(69, 69, 69);
+    color: #454545;
     font-weight: 500;
+}
+.alinhar-usuario{
+    display: grid;
+    align-content: center;
 }
 
 /*ELEMENTO EDITAR BANNER 1*/

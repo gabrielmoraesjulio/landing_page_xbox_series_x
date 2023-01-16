@@ -1,0 +1,10 @@
+.alinhamento-listar {
+    margin: 30px;
+}
+.loop-listar {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #454545;
+}

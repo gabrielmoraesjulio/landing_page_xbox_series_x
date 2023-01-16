@@ -1,0 +1,6 @@
+.form-email {
+    display: grid;
+    justify-content: center;
+    margin: 20px;
+    text-align: center;
+}
